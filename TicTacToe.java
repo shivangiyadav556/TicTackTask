@@ -72,5 +72,17 @@ public class TicTacToe {
 		}
 		return false;
 	}
-	
+	private static void computerTurn(char[][] board) {
+		Random rand = new Random();
+		int computerMoveX, computerMoveY;
+		while (true) {
+			computerMoveX = rand.nextInt(3);
+            computerMoveY = rand.nextInt(3);
+			if (isValidMove(board, Integer.toString(computerMoveX)+","+Integer.toString(computerMoveY))) {
+				break;
+			}
+		}
+		System.out.println("Computer chose " + computerMoveX + ","+ computerMoveY);
+		placeMove(board, Integer.toString(computerMoveX)+","+Integer.toString(computerMoveY), 'O');
+	}
 }
