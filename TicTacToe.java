@@ -109,4 +109,19 @@ public class TicTacToe {
 				return false;
 		}
 	}
+	private static void playerTurn(char[][] board, Scanner scanner) {
+		String userInput;
+		while (true) {
+			System.out.println("Move");
+			userInput = scanner.nextLine();
+			if (isValidMove(board, userInput)){
+				break;
+			} else {
+				System.out.println(userInput + " " + "Invalid move, place already taken.");
+			}
+		}
+		placeMove(board, userInput, 'X');
+	}
+
+
 }
